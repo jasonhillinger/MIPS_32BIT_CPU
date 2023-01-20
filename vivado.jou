@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Dec  1 15:02:45 2022
+# Process ID: 4814
+# Current directory: /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam
+# Command line: vivado
+# Log file: /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/vivado.log
+# Journal file: /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project lab5_exam /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/lab5_exam -part xc7a100tcsg324-1
+set_property target_language VHDL [current_project]
+set_property simulator_language VHDL [current_project]
+add_files -norecurse {/nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/mux_block.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/regfile_32.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/adder_subtract.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/cpu.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/i_cache.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/sign_extend.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/d_cache.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/pc_reg.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/next_address_32.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/cpu_4bit.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/logic_unit.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/alu.vhd}
+import_files -force -norecurse
+import_files -fileset constrs_1 -force -norecurse /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/cpu.xdc
+update_compile_order -fileset sources_1
+set_property target_constrs_file /nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/lab5_exam/lab5_exam.srcs/constrs_1/imports/lab5_exam/cpu.xdc [current_fileset -constrset]
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/lab5_exam/lab5_exam.runs/impl_1/cpu_4bit.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/nfs/home/j/j_hillin/Desktop/COEN_316/lab5_exam/lab5_exam/lab5_exam.runs/impl_1/cpu_4bit.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]

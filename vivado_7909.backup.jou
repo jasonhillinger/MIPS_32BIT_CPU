@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Nov 29 00:31:00 2022
+# Process ID: 7909
+# Current directory: /nfs/home/j/j_hillin/Desktop/COEN_316/lab5
+# Command line: vivado
+# Log file: /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/vivado.log
+# Journal file: /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/lab5/lab5.xpr
+update_compile_order -fileset sources_1
+close_project
+create_project lab5_2 /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/lab5_2 -part xc7a100tcsg324-1
+set_property target_language VHDL [current_project]
+set_property simulator_language VHDL [current_project]
+add_files -norecurse {/nfs/home/j/j_hillin/Desktop/COEN_316/lab5/adder_subtract.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/logic_unit.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/sign_extend.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/cpu_4bit.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/next_address_32.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/d_cache.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/cpu.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/mux_block.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/alu.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/regfile_32.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/i_cache.vhd /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/pc_reg.vhd}
+import_files -force -norecurse
+import_files -fileset constrs_1 -force -norecurse /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/cpu.xdc
+update_compile_order -fileset sources_1
+set_property target_constrs_file /nfs/home/j/j_hillin/Desktop/COEN_316/lab5/lab5_2/lab5_2.srcs/constrs_1/imports/lab5/cpu.xdc [current_fileset -constrset]
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
